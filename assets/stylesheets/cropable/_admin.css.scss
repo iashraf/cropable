@@ -1,0 +1,37 @@
+.crop-container {
+	height: 100%;
+	.img-container {
+		float: left;
+		width: 572px;
+		.crop {
+			max-width: 572px;
+			max-height: 600px;
+		}
+		.jcrop-holder {
+			margin: 0 auto;
+		}
+	}
+	form {
+		float: right;
+		height: 100%;
+		fieldset {
+			width: 100px;
+			height: 100%;
+			box-sizing: border-box;
+			margin: 0;
+			li {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.image-input-container {
+	margin: 0 0 0 20%;
+	img {
+		@include inline-block;
+		margin: 10px 0;
+		max-height: 200px;
+	}
+	div {}
+}
