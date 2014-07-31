@@ -1,0 +1,7 @@
+Date.now = Date.now || function() { return +new Date; };
+
+$.colorbox.close();
+
+var $img = $('#<%= resource_class.name.underscore %>_<%= params[:style] %>_input .image-input-image');
+
+$img.attr( 'src', $img.attr('src').split('?')[0] + '?' + Date.now() );

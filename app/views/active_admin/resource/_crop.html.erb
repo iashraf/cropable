@@ -1,0 +1,27 @@
+<div class="crop-container" data-style="<%= @attr %>" data-class="<%= resource_class.name.underscore %>" data-width="<%= resource.image_geometry(@attr).width %>">
+	<div class="img-container">
+		<%= image_tag resource.send( @attr ).url, class: "crop", data: {
+			aspect: @aspect,
+			x: resource.send( "#{@attr}_x" ),
+			y: resource.send( "#{@attr}_y" ),
+			h: resource.send( "#{@attr}_h" ),
+			w: resource.send( "#{@attr}_w" )
+		} %>
+	</div>
+
+	<%= semantic_form_for [ :update_crop, :admin, resource ], remote: true do |f| %>
+
+		<%= f.hidden_field "#{@attr}_x" %>
+		<%= f.hidden_field "#{@attr}_y" %>
+		<%= f.hidden_field "#{@attr}_h" %>
+		<%= f.hidden_field "#{@attr}_w" %>
+		<%= hidden_field_tag "h" %>
+		<%= hidden_field_tag "w" %>
+		<%= hidden_field_tag "style", @attr %>
+
+		<%= f.inputs do %>
+			<%= f.action :submit, label: "Crop" %>
+		<% end %>
+
+	<% end %>
+</div>
