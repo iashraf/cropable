@@ -7,9 +7,10 @@
 			h: resource.send( "#{@attr}_h" ),
 			w: resource.send( "#{@attr}_w" )
 		} %>
+		<div class="crop-spinner"></div>
 	</div>
 
-	<%= semantic_form_for [ :update_crop, :admin, resource ], remote: true do |f| %>
+	<%= semantic_form_for [ :update_crop, :admin, resource ], :html => { class: "crop-form" }, remote: true do |f| %>
 
 		<%= f.hidden_field "#{@attr}_x" %>
 		<%= f.hidden_field "#{@attr}_y" %>
@@ -24,4 +25,13 @@
 		<% end %>
 
 	<% end %>
+
 </div>
+
+<script type="text/javascript">
+	$(function(){
+		$("form.crop-form").on("submit", function(){
+			$(".crop-spinner").show();
+		});
+	});
+</script>

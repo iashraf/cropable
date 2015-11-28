@@ -1,37 +1,62 @@
 .crop-container {
 	height: 100%;
+
 	.img-container {
+		position: relative;
 		float: left;
 		width: 572px;
+
 		.crop {
 			max-width: 572px;
 			max-height: 600px;
-		}
+			}/* .crop */
+
 		.jcrop-holder {
 			margin: 0 auto;
-		}
-	}
+			}/* .jcrop-holder */
+
+		.crop-spinner {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1000;
+			background: rgba(255,255,255,0.8) url("/assets/colorbox/loading.gif") no-repeat center center;
+			}/* .crop-spinner */
+
+		}/* .crop-container */
+
 	form {
 		float: right;
 		height: 100%;
+
 		fieldset {
 			width: 100px;
 			height: 100%;
 			box-sizing: border-box;
 			margin: 0;
+
 			li {
 				text-align: center;
-			}
-		}
-	}
-}
+				}/*  */
+
+			}/* li */
+
+		}/* fieldset */
+
+	}/* form */
 
 .image-input-container {
 	margin: 0 0 0 20%;
+
 	img {
 		@include inline-block;
 		margin: 10px 0;
 		max-height: 200px;
-	}
+		}/* img */
+
 	div {}
-}
+
+	}/* .image-input-container */
